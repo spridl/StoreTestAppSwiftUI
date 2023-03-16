@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		9520C02929C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520C02829C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift */; };
-		9520C02B29C2192C00E02C32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520C02A29C2192C00E02C32 /* ContentView.swift */; };
+		9520C02B29C2192C00E02C32 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520C02A29C2192C00E02C32 /* SignInView.swift */; };
 		9520C02D29C2192D00E02C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9520C02C29C2192D00E02C32 /* Assets.xcassets */; };
 		9520C03029C2192D00E02C32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9520C02F29C2192D00E02C32 /* Preview Assets.xcassets */; };
 		9520C03229C2192D00E02C32 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520C03129C2192D00E02C32 /* Persistence.swift */; };
 		9520C03529C2192D00E02C32 /* StoreTestAppSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9520C03329C2192D00E02C32 /* StoreTestAppSwiftUI.xcdatamodeld */; };
+		9520C03C29C249BA00E02C32 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520C03B29C249BA00E02C32 /* LogInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9520C02529C2192C00E02C32 /* StoreTestAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreTestAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9520C02829C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTestAppSwiftUIApp.swift; sourceTree = "<group>"; };
-		9520C02A29C2192C00E02C32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9520C02A29C2192C00E02C32 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9520C02C29C2192D00E02C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9520C02F29C2192D00E02C32 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9520C03129C2192D00E02C32 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9520C03429C2192D00E02C32 /* StoreTestAppSwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreTestAppSwiftUI.xcdatamodel; sourceTree = "<group>"; };
+		9520C03B29C249BA00E02C32 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				9520C02829C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift */,
-				9520C02A29C2192C00E02C32 /* ContentView.swift */,
+				9520C02A29C2192C00E02C32 /* SignInView.swift */,
+				9520C03B29C249BA00E02C32 /* LogInView.swift */,
 				9520C02C29C2192D00E02C32 /* Assets.xcassets */,
 				9520C03129C2192D00E02C32 /* Persistence.swift */,
 				9520C03329C2192D00E02C32 /* StoreTestAppSwiftUI.xcdatamodeld */,
@@ -143,8 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9520C03C29C249BA00E02C32 /* LogInView.swift in Sources */,
 				9520C03229C2192D00E02C32 /* Persistence.swift in Sources */,
-				9520C02B29C2192C00E02C32 /* ContentView.swift in Sources */,
+				9520C02B29C2192C00E02C32 /* SignInView.swift in Sources */,
 				9520C03529C2192D00E02C32 /* StoreTestAppSwiftUI.xcdatamodeld in Sources */,
 				9520C02929C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift in Sources */,
 			);
