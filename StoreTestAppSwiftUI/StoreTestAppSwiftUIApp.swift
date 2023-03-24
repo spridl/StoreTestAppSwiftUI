@@ -13,7 +13,7 @@ struct StoreTestAppSwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            LatestGroupView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

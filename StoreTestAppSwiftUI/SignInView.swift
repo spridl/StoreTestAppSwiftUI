@@ -9,12 +9,16 @@ import SwiftUI
 import CoreData
 
 struct SignInView: View {
+    
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var users: FetchedResults<Item>
+    
     @State private var firstNameTF: String = ""
     @State private var lastNameTF: String = ""
     @State private var emailTF: String = ""
     
-    private let backgroundColorTF = Color(red: 232/255, green: 232/255, blue: 232/255)
-    
+    @State private var signInIsPresented = false
+    @State private var loginIsPresented = false
     
     var body: some View {
         VStack {
@@ -23,39 +27,33 @@ struct SignInView: View {
                 .fontWeight(.bold)
             VStack(spacing: 30) {
                 TextField("First name", text: $firstNameTF)
-                    .frame(height: 30)
-                    .background(backgroundColorTF)
-                    .cornerRadius(30)
-                .multilineTextAlignment(.center)
-                TextField("Last name", text: $firstNameTF)
-                    .frame(height: 30)
-                    .background(backgroundColorTF)
-                    .cornerRadius(30)
-                .multilineTextAlignment(.center)
-                TextField("Email", text: $firstNameTF)
-                    .frame(height: 30)
-                    .background(backgroundColorTF)
-                    .cornerRadius(30)
-                .multilineTextAlignment(.center)
-                Button(action: {}) {
+                    .grayBackground()
+                TextField("Last name", text: $lastNameTF)
+                    .grayBackground()
+                TextField("Email", text: $emailTF)
+                    .grayBackground()
+                Button(action: { sigIn() }) {
                     Text("Sign In")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 }
-                .frame(height: 46)
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .background(Color(red: 78/255, green: 85/255, blue: 215/255))
-                .cornerRadius(15)
+                .setBlueButtonStyle()
+                .sheet(isPresented: $signInIsPresented) {
+                    PageOneView()
+                }
             }
             .padding(EdgeInsets(top: 77, leading: 43, bottom: 0, trailing: 43))
             HStack {
                 Text("Already have an account?")
                     .font(.footnote)
                     .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
-                Button(action: {}) {
+                Button(action: { loginIsPresented.toggle() }) {
                     Text("Log in")
                         .font(.footnote)
                         .foregroundColor(Color(red: 37/255, green: 79/255, blue: 230/255))
+                }
+                .fullScreenCover(isPresented: $loginIsPresented) {
+                    LogInView()
                 }
                 Spacer()
             }
@@ -75,6 +73,23 @@ struct SignInView: View {
                 }
             }
             .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
+        }
+    }
+    private func sigIn() {
+        if !firstNameTF.isEmpty && !lastNameTF.isEmpty && emailTF.isValidEmail {
+            for user in users {
+                if user.firstName == firstNameTF && user.lastName == lastNameTF && user.email == emailTF {
+                    return
+                }
+            }
+            let newUser = Item(context: moc)
+            newUser.id = UUID()
+            newUser.firstName = firstNameTF
+            newUser.lastName = lastNameTF
+            newUser.email = emailTF
+            try? moc.save()
+            signInIsPresented.toggle()
+            
         }
     }
 }

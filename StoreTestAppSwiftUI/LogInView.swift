@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct LogInView: View {
+    @FetchRequest(sortDescriptors: []) var users: FetchedResults<Item>
+    
     @State private var firstNameTF: String = ""
     @State private var passwordTF: String = ""
-    
-    private let backgroundColorTF = Color(red: 232/255, green: 232/255, blue: 232/255)
+    @State private var loginIsPresented = false
     
     var body: some View {
         VStack {
@@ -20,29 +21,31 @@ struct LogInView: View {
             .bold()
             VStack(spacing: 30) {
                 TextField("First name", text: $firstNameTF)
-                    .frame(height: 30)
-                    .background(backgroundColorTF)
-                    .cornerRadius(30)
-                .multilineTextAlignment(.center)
-                TextField("Password", text: $passwordTF)
-                    .frame(height: 30)
-                    .background(backgroundColorTF)
-                    .cornerRadius(30)
-                .multilineTextAlignment(.center)
+                    .grayBackground()
+                SecureInputView("Password", text: $passwordTF)
             }
             .padding(EdgeInsets(top: 77, leading: 0, bottom: 100, trailing: 0))
             
-            Button(action: {}) {
+            Button(action: {login()}) {
                 Text("Login")
                     .fontWeight(.bold)
                     .foregroundColor(.white)
             }
-            .frame(height: 46)
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .background(Color(red: 78/255, green: 85/255, blue: 215/255))
-            .cornerRadius(15)
+            .setBlueButtonStyle()
+            .sheet(isPresented: $loginIsPresented) {
+                PageOneView()
+            }
         }
         .padding(EdgeInsets(top: 0, leading: 43, bottom: 200, trailing: 43))
+    }
+    
+    private func login() {
+        for user in users {
+            if user.firstName == firstNameTF {
+                loginIsPresented.toggle()
+            }
+        }
+        
     }
 }
 
