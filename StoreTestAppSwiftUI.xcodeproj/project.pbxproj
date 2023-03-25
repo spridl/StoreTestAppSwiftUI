@@ -35,6 +35,7 @@
 		9555554229CE335900A977F3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554129CE335900A977F3 /* TabBarView.swift */; };
 		9555554429CEED8200A977F3 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554329CEED8200A977F3 /* TabBarItems.swift */; };
 		9555554629CEF2C600A977F3 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554529CEF2C600A977F3 /* TabBarButtonView.swift */; };
+		9555554A29CF45DD00A977F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554929CF45DD00A977F3 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		9555554129CE335900A977F3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		9555554329CEED8200A977F3 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 		9555554529CEF2C600A977F3 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
+		9555554929CF45DD00A977F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				9520C02829C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift */,
-				9520C04B29C9B27F00E02C32 /* ProfileView.swift */,
-				9520C02A29C2192C00E02C32 /* SignInView.swift */,
-				9520C03B29C249BA00E02C32 /* LogInView.swift */,
-				9555554729CEF2CC00A977F3 /* TabBarViews */,
+				9555554829CF45B500A977F3 /* Views */,
 				9555553329CC4EB800A977F3 /* Networking */,
-				9555552629CA38E600A977F3 /* PageOneViews */,
 				9555552129C9D6A400A977F3 /* Helpers */,
 				9555551E29C9D04500A977F3 /* Models */,
 				9520C04629C791D200E02C32 /* Extensions */,
@@ -158,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				9520C04929C7944900E02C32 /* SecureInputView.swift */,
+				9555554929CF45DD00A977F3 /* ImagePicker.swift */,
 				9555552429C9D6D000A977F3 /* ProfileButton.swift */,
 				9555553B29CDF37200A977F3 /* AddToCartButton.swift */,
 				9555553D29CE206E00A977F3 /* FavoritesButtonView.swift */,
@@ -193,6 +192,18 @@
 				9555554529CEF2C600A977F3 /* TabBarButtonView.swift */,
 			);
 			path = TabBarViews;
+			sourceTree = "<group>";
+		};
+		9555554829CF45B500A977F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9520C04B29C9B27F00E02C32 /* ProfileView.swift */,
+				9520C02A29C2192C00E02C32 /* SignInView.swift */,
+				9520C03B29C249BA00E02C32 /* LogInView.swift */,
+				9555554729CEF2CC00A977F3 /* TabBarViews */,
+				9555552629CA38E600A977F3 /* PageOneViews */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +279,7 @@
 				9555553529CC4ECE00A977F3 /* NetworkManager.swift in Sources */,
 				9555553A29CCE21500A977F3 /* FlashSaleView.swift in Sources */,
 				9555553729CCDF0200A977F3 /* FlashSale.swift in Sources */,
+				9555554A29CF45DD00A977F3 /* ImagePicker.swift in Sources */,
 				9520C04A29C7944900E02C32 /* SecureInputView.swift in Sources */,
 				9555552A29CA39C500A977F3 /* Categories.swift in Sources */,
 				9555553229CB8DE100A977F3 /* Latest.swift in Sources */,
