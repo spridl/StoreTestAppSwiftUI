@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct LogInView: View {
+    @StateObject private var viewModel = LoginViewModel()
     @FetchRequest(sortDescriptors: []) var users: FetchedResults<Item>
-    
-    @State private var firstNameTF: String = ""
-    @State private var passwordTF: String = ""
-    @State private var loginIsPresented = false
-    @State private var alertIsPresented = false
     
     var body: some View {
         ScrollView {
@@ -22,9 +18,9 @@ struct LogInView: View {
                     .font(.title)
                 .bold()
                 VStack(spacing: 30) {
-                    TextField("First name", text: $firstNameTF)
+                    TextField("First name", text: $viewModel.firstNameTF)
                         .grayBackground()
-                    SecureInputView("Password", text: $passwordTF)
+                    SecureInputView("Password", text: $viewModel.passwordTF)
                 }
                 .padding(EdgeInsets(top: 77, leading: 0, bottom: 100, trailing: 0))
                 
@@ -34,10 +30,10 @@ struct LogInView: View {
                         .foregroundColor(.white)
                 }
                 .setBlueButtonStyle()
-                .sheet(isPresented: $loginIsPresented) {
+                .fullScreenCover(isPresented: $viewModel.loginIsPresented) {
                     TabBarView()
                 }
-                .alert("Ошибка", isPresented: $alertIsPresented, actions: {}) {
+                .alert("Ошибка", isPresented: $viewModel.alertIsPresented, actions: {}) {
                     Text("Такого пользователя не существует")
                 }
 
@@ -48,10 +44,10 @@ struct LogInView: View {
     
     private func login() {
         for user in users {
-            if user.firstName == firstNameTF {
-                loginIsPresented.toggle()
+            if user.firstName == viewModel.firstNameTF {
+                viewModel.loginIsPresented.toggle()
             } else {
-                alertIsPresented.toggle()
+                viewModel.alertIsPresented.toggle()
             }
         }
         

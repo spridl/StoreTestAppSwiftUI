@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @State private var selectedTab = "PageOne"
-    private let tabBarItems = TabBarItems.shared.tabBarItems
+    @StateObject private var viewModel = TabBarViewModel()
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -17,7 +16,7 @@ struct TabBarView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            TabView(selection: $selectedTab) {
+            TabView(selection: $viewModel.selectedTab) {
                 PageOneView()
                     .tag("PageOne")
                 Text("Favourites")
@@ -30,9 +29,9 @@ struct TabBarView: View {
                     .tag("Profile")
             }
             HStack {
-                ForEach(tabBarItems, id: \.self) { tab in
+                ForEach(viewModel.tabBarItems, id: \.self) { tab in
                     Spacer()
-                    TabBarButtonView(tab: tab, selected: $selectedTab)
+                    TabBarButtonView(tab: tab, selected: $viewModel.selectedTab)
                     Spacer()
                     
                 }

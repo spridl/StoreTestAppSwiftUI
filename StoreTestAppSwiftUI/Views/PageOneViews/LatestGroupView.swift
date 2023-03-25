@@ -67,9 +67,7 @@ var body: some View {
                                 }
                             }
                     }
-//                        .frame(width: geometry.size.height / 3)
                 }
-//                    .frame(width: geometry.size.height / 3)
             }
 
                 }

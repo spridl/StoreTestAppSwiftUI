@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var signInIspresented = false
-    @State private var image: Image?
-    @State private var showingImagePicker = false
-    @State private var inputImage: UIImage?
+    @StateObject private var viewModel = ProfileViewModel()
     private let balance = "$ 1593"
     
     var body: some View {
@@ -20,7 +17,7 @@ struct ProfileView: View {
                 Text("Profile")
                     .font(.title3)
                     .bold()
-                if let image = image {
+                if let image = viewModel.image {
                     image
                         .resizable()
                         .frame(width: 80, height: 80)
@@ -33,13 +30,13 @@ struct ProfileView: View {
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
                 }
-                Button(action: {showingImagePicker.toggle()}) {
+                Button(action: {viewModel.showingImagePicker.toggle()}) {
                     Text("Change photo")
                         .font(.footnote)
                         .foregroundColor(Color(red: 0.5019607843137255, green: 0.5019607843137255, blue: 0.5019607843137255))
                 }
-                .sheet(isPresented: $showingImagePicker) {
-                    ImagePicker(image: $inputImage)
+                .sheet(isPresented: $viewModel.showingImagePicker) {
+                    ImagePicker(image: $viewModel.inputImage)
                 }
                 Text("Full name User")
                     .font(.title3)
@@ -69,7 +66,7 @@ struct ProfileView: View {
                     ProfileButton(leftImage: "creditcard", rightImage: "chevron.right", text: "Trade history")
                     ProfileButton(leftImage: "repeat", rightImage: "chevron.right", text: "Restore Purchase")
                     ProfileButton(leftImage: "questionmark.circle", rightImage: "", text: "Help")
-                    Button(action: {signInIspresented.toggle()}) {
+                    Button(action: {viewModel.signInIspresented.toggle()}) {
                         HStack {
                             ZStack {
                                 Circle()
@@ -86,7 +83,7 @@ struct ProfileView: View {
                         }
                         .frame(height: 32)
                     }
-                    .fullScreenCover(isPresented: $signInIspresented) {
+                    .fullScreenCover(isPresented: $viewModel.signInIspresented) {
                         SignInView()
                     }
                     }
@@ -95,15 +92,12 @@ struct ProfileView: View {
             }
             .padding()
             .padding(.bottom, 40)
-            .onChange(of: inputImage) { _ in
-                loadImage()
+            .onChange(of: viewModel.inputImage) { _ in
+                viewModel.loadImage()
             }
         }
     }
-    private func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
-    }
+
 }
 
 struct ProfileView_Previews: PreviewProvider {

@@ -9,18 +9,11 @@ import SwiftUI
 import CoreData
 
 struct SignInView: View {
+    @StateObject private var viewModel = SignInViewModel()
     
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var users: FetchedResults<Item>
     
-    @State private var firstNameTF: String = ""
-    @State private var lastNameTF: String = ""
-    @State private var emailTF: String = ""
-    
-    @State private var signInIsPresented = false
-    @State private var loginIsPresented = false
-    
-    @State private var showAlert = false
     
     var body: some View {
         ScrollView {
@@ -29,11 +22,11 @@ struct SignInView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 VStack(spacing: 30) {
-                    TextField("First name", text: $firstNameTF)
+                    TextField("First name", text: $viewModel.firstNameTF)
                         .grayBackground()
-                    TextField("Last name", text: $lastNameTF)
+                    TextField("Last name", text: $viewModel.lastNameTF)
                         .grayBackground()
-                    TextField("Email", text: $emailTF)
+                    TextField("Email", text: $viewModel.emailTF)
                         .grayBackground()
                     Button(action: { sigIn() }) {
                         Text("Sign In")
@@ -41,10 +34,10 @@ struct SignInView: View {
                             .foregroundColor(.white)
                     }
                     .setBlueButtonStyle()
-                    .sheet(isPresented: $signInIsPresented) {
+                    .fullScreenCover(isPresented: $viewModel.signInIsPresented) {
                         TabBarView()
                     }
-                    .alert("Ошибка", isPresented: $showAlert, actions: {}) {
+                    .alert("Ошибка", isPresented: $viewModel.showAlert, actions: {}) {
                         Text("Такой польователь уже зарегистрирован")
                     }
                 }
@@ -53,12 +46,12 @@ struct SignInView: View {
                     Text("Already have an account?")
                         .font(.footnote)
                         .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
-                    Button(action: { loginIsPresented.toggle() }) {
+                    Button(action: { viewModel.loginIsPresented.toggle() }) {
                         Text("Log in")
                             .font(.footnote)
                             .foregroundColor(Color(red: 37/255, green: 79/255, blue: 230/255))
                     }
-                    .fullScreenCover(isPresented: $loginIsPresented) {
+                    .fullScreenCover(isPresented: $viewModel.loginIsPresented) {
                         LogInView()
                     }
                     Spacer()
@@ -89,20 +82,20 @@ struct SignInView: View {
         }
     }
     private func sigIn() {
-        if !firstNameTF.isEmpty && !lastNameTF.isEmpty && emailTF.isValidEmail {
+        if !viewModel.firstNameTF.isEmpty && !viewModel.lastNameTF.isEmpty && viewModel.emailTF.isValidEmail {
             for user in users {
-                if user.firstName == firstNameTF && user.lastName == lastNameTF && user.email == emailTF {
-                    showAlert.toggle()
+                if user.firstName == viewModel.firstNameTF && user.lastName == viewModel.lastNameTF && user.email == viewModel.emailTF {
+                    viewModel.showAlert.toggle()
                     return
                 }
             }
             let newUser = Item(context: moc)
             newUser.id = UUID()
-            newUser.firstName = firstNameTF
-            newUser.lastName = lastNameTF
-            newUser.email = emailTF
+            newUser.firstName = viewModel.firstNameTF
+            newUser.lastName = viewModel.lastNameTF
+            newUser.email = viewModel.emailTF
             try? moc.save()
-            signInIsPresented.toggle()
+            viewModel.signInIsPresented.toggle()
             
         }
     }

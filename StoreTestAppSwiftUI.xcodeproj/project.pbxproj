@@ -36,6 +36,11 @@
 		9555554429CEED8200A977F3 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554329CEED8200A977F3 /* TabBarItems.swift */; };
 		9555554629CEF2C600A977F3 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554529CEF2C600A977F3 /* TabBarButtonView.swift */; };
 		9555554A29CF45DD00A977F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554929CF45DD00A977F3 /* ImagePicker.swift */; };
+		9555554E29CF847900A977F3 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554D29CF847900A977F3 /* SignInViewModel.swift */; };
+		9555555129CF888E00A977F3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555555029CF888E00A977F3 /* LoginViewModel.swift */; };
+		9555555329CF895500A977F3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555555229CF895500A977F3 /* ProfileViewModel.swift */; };
+		9555555529CF8B2300A977F3 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555555429CF8B2300A977F3 /* TabBarViewModel.swift */; };
+		9555555729CF8C5300A977F3 /* PageOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555555629CF8C5300A977F3 /* PageOneViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +74,11 @@
 		9555554329CEED8200A977F3 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 		9555554529CEF2C600A977F3 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
 		9555554929CF45DD00A977F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9555554D29CF847900A977F3 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		9555555029CF888E00A977F3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9555555229CF895500A977F3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		9555555429CF8B2300A977F3 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		9555555629CF8C5300A977F3 /* PageOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				9520C02829C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift */,
+				9555554F29CF847F00A977F3 /* ViewModels */,
 				9555554829CF45B500A977F3 /* Views */,
 				9555553329CC4EB800A977F3 /* Networking */,
 				9555552129C9D6A400A977F3 /* Helpers */,
@@ -206,6 +217,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9555554F29CF847F00A977F3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9555554D29CF847900A977F3 /* SignInViewModel.swift */,
+				9555555029CF888E00A977F3 /* LoginViewModel.swift */,
+				9555555229CF895500A977F3 /* ProfileViewModel.swift */,
+				9555555429CF8B2300A977F3 /* TabBarViewModel.swift */,
+				9555555629CF8C5300A977F3 /* PageOneViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,9 +307,11 @@
 				9555552A29CA39C500A977F3 /* Categories.swift in Sources */,
 				9555553229CB8DE100A977F3 /* Latest.swift in Sources */,
 				9555553C29CDF37200A977F3 /* AddToCartButton.swift in Sources */,
+				9555554E29CF847900A977F3 /* SignInViewModel.swift in Sources */,
 				9555554429CEED8200A977F3 /* TabBarItems.swift in Sources */,
 				9520C03E29C36FDA00E02C32 /* TextFieldModifier.swift in Sources */,
 				9520C04029C3720100E02C32 /* ButtonModifier.swift in Sources */,
+				9555555529CF8B2300A977F3 /* TabBarViewModel.swift in Sources */,
 				9555552529C9D6D000A977F3 /* ProfileButton.swift in Sources */,
 				9555554229CE335900A977F3 /* TabBarView.swift in Sources */,
 				9520C03C29C249BA00E02C32 /* LogInView.swift in Sources */,
@@ -296,10 +321,13 @@
 				9555552829CA390E00A977F3 /* CategoriesView.swift in Sources */,
 				9520C02B29C2192C00E02C32 /* SignInView.swift in Sources */,
 				9555554629CEF2C600A977F3 /* TabBarButtonView.swift in Sources */,
+				9555555129CF888E00A977F3 /* LoginViewModel.swift in Sources */,
 				9520C03529C2192D00E02C32 /* StoreTestAppSwiftUI.xcdatamodeld in Sources */,
 				9555553029CB884600A977F3 /* LatestGroupView.swift in Sources */,
+				9555555329CF895500A977F3 /* ProfileViewModel.swift in Sources */,
 				9555552C29CB73EF00A977F3 /* SearchBarView.swift in Sources */,
 				9520C04529C458D300E02C32 /* PageOneView.swift in Sources */,
+				9555555729CF8C5300A977F3 /* PageOneViewModel.swift in Sources */,
 				9520C02929C2192C00E02C32 /* StoreTestAppSwiftUIApp.swift in Sources */,
 				9520C04C29C9B27F00E02C32 /* ProfileView.swift in Sources */,
 				9520C04829C791F200E02C32 /* String Extension.swift in Sources */,

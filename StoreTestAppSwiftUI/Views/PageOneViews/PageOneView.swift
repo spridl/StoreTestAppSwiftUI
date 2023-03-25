@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct PageOneView: View {
-    @State var groupLatestName = "Latest"
-    @State var groupFlashSaleName = "Flash sale"
-    @State var groupBrandsName = "Brands"
-    let dataSet = (1...20).map {"Item \($0)"}
+    @StateObject private var viewModel = PageOneViewModel()
     let rows = [
         GridItem(.flexible())
     ]
@@ -26,14 +23,14 @@ struct PageOneView: View {
                         SearchBarView()
                             .padding(EdgeInsets(top: 20, leading: 56, bottom: 0, trailing: 56))
                         CategoriesView()
-                        GroupNameView(groupName: $groupLatestName)
+                        GroupNameView(groupName: $viewModel.groupLatestName)
                         LatestGroupView()
                             .frame(height: geometry.size.height / 4)
                             .padding(.bottom)
-                        GroupNameView(groupName: $groupFlashSaleName)
+                        GroupNameView(groupName: $viewModel.groupFlashSaleName)
                         FlashSaleView()
                             .frame(height: geometry.size.height * 0.35)
-                        GroupNameView(groupName: $groupBrandsName)
+                        GroupNameView(groupName: $viewModel.groupBrandsName)
                         Spacer()
                     }
                     .navigationTitle(Text("Trade by bata"))
