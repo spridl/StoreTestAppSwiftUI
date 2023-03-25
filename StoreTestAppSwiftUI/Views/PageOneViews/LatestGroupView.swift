@@ -15,7 +15,7 @@ struct LatestGroupView: View {
 var body: some View {
     GeometryReader { geometry in
         ScrollView(.horizontal) {
-            LazyHGrid(rows: [GridItem(.adaptive(minimum: geometry.size.width))], spacing: 20) {
+            LazyHGrid(rows: [GridItem(.adaptive(minimum: geometry.size.height))], spacing: 20) {
                     ForEach(networkManager.latest, id: \.self) { item in
                         ZStack {
                             AsyncImage(url: URL(string: item.imageUrl)){ image in
