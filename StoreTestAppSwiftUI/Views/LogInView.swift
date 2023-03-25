@@ -43,14 +43,11 @@ struct LogInView: View {
     }
     
     private func login() {
-        for user in users {
-            if user.firstName == viewModel.firstNameTF {
-                viewModel.loginIsPresented.toggle()
-            } else {
-                viewModel.alertIsPresented.toggle()
-            }
+        if users.contains(where: { $0.firstName == viewModel.firstNameTF }) {
+            viewModel.loginIsPresented.toggle()
+        } else {
+            viewModel.alertIsPresented.toggle()
         }
-        
     }
 }
 
