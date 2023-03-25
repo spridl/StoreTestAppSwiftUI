@@ -32,6 +32,9 @@
 		9555553A29CCE21500A977F3 /* FlashSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555553929CCE21500A977F3 /* FlashSaleView.swift */; };
 		9555553C29CDF37200A977F3 /* AddToCartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555553B29CDF37200A977F3 /* AddToCartButton.swift */; };
 		9555553E29CE206E00A977F3 /* FavoritesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555553D29CE206E00A977F3 /* FavoritesButtonView.swift */; };
+		9555554229CE335900A977F3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554129CE335900A977F3 /* TabBarView.swift */; };
+		9555554429CEED8200A977F3 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554329CEED8200A977F3 /* TabBarItems.swift */; };
+		9555554629CEF2C600A977F3 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555554529CEF2C600A977F3 /* TabBarButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		9555553929CCE21500A977F3 /* FlashSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleView.swift; sourceTree = "<group>"; };
 		9555553B29CDF37200A977F3 /* AddToCartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartButton.swift; sourceTree = "<group>"; };
 		9555553D29CE206E00A977F3 /* FavoritesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButtonView.swift; sourceTree = "<group>"; };
+		9555554129CE335900A977F3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		9555554329CEED8200A977F3 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
+		9555554529CEF2C600A977F3 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 				9520C04B29C9B27F00E02C32 /* ProfileView.swift */,
 				9520C02A29C2192C00E02C32 /* SignInView.swift */,
 				9520C03B29C249BA00E02C32 /* LogInView.swift */,
+				9555554729CEF2CC00A977F3 /* TabBarViews */,
 				9555553329CC4EB800A977F3 /* Networking */,
 				9555552629CA38E600A977F3 /* PageOneViews */,
 				9555552129C9D6A400A977F3 /* Helpers */,
@@ -140,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				9555552929CA39C500A977F3 /* Categories.swift */,
+				9555554329CEED8200A977F3 /* TabBarItems.swift */,
 				9555553129CB8DE100A977F3 /* Latest.swift */,
 				9555553629CCDF0200A977F3 /* FlashSale.swift */,
 			);
@@ -176,6 +184,15 @@
 				9555553429CC4ECE00A977F3 /* NetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		9555554729CEF2CC00A977F3 /* TabBarViews */ = {
+			isa = PBXGroup;
+			children = (
+				9555554129CE335900A977F3 /* TabBarView.swift */,
+				9555554529CEF2C600A977F3 /* TabBarButtonView.swift */,
+			);
+			path = TabBarViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,15 +272,18 @@
 				9555552A29CA39C500A977F3 /* Categories.swift in Sources */,
 				9555553229CB8DE100A977F3 /* Latest.swift in Sources */,
 				9555553C29CDF37200A977F3 /* AddToCartButton.swift in Sources */,
+				9555554429CEED8200A977F3 /* TabBarItems.swift in Sources */,
 				9520C03E29C36FDA00E02C32 /* TextFieldModifier.swift in Sources */,
 				9520C04029C3720100E02C32 /* ButtonModifier.swift in Sources */,
 				9555552529C9D6D000A977F3 /* ProfileButton.swift in Sources */,
+				9555554229CE335900A977F3 /* TabBarView.swift in Sources */,
 				9520C03C29C249BA00E02C32 /* LogInView.swift in Sources */,
 				9520C03229C2192D00E02C32 /* Persistence.swift in Sources */,
 				9555552E29CB7AE200A977F3 /* GroupNameView.swift in Sources */,
 				9555553E29CE206E00A977F3 /* FavoritesButtonView.swift in Sources */,
 				9555552829CA390E00A977F3 /* CategoriesView.swift in Sources */,
 				9520C02B29C2192C00E02C32 /* SignInView.swift in Sources */,
+				9555554629CEF2C600A977F3 /* TabBarButtonView.swift in Sources */,
 				9520C03529C2192D00E02C32 /* StoreTestAppSwiftUI.xcdatamodeld in Sources */,
 				9555553029CB884600A977F3 /* LatestGroupView.swift in Sources */,
 				9555552C29CB73EF00A977F3 /* SearchBarView.swift in Sources */,

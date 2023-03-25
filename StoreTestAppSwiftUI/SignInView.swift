@@ -61,12 +61,18 @@ struct SignInView: View {
             VStack(spacing: 50) {
                 Button(action: {}) {
                     Image("googleIcon")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .scaledToFit()
                     Text("Sign in with Google")
                         .font(.subheadline)
                         .foregroundColor(.black)
                 }
                 Button(action: {}) {
                     Image("appleIcon")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .scaledToFit()
                     Text("Sign in with Apple")
                         .font(.subheadline)
                         .foregroundColor(.black)

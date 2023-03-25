@@ -22,7 +22,7 @@ var body: some View {
                                 image
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9)
+                                    .frame(width: geometry.size.width, height: geometry.size.height)
                                     .cornerRadius(30)
                             } placeholder: {
                                 Image(systemName: "xmark.shield")
@@ -35,7 +35,7 @@ var body: some View {
                                         .bold()
                                         .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
                                             .background(Color(red: 196/255, green: 196/255, blue: 196/255))
-                                            .cornerRadius(10)
+                                            .clipShape(Capsule())
                                             .opacity(0.8)
                                         .padding(.leading)
                                     Spacer()
