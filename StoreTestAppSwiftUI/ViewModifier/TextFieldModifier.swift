@@ -10,7 +10,6 @@ import SwiftUI
 struct TextFieldModifier: ViewModifier {
     
     private let backgroundColorTF = Color(red: 232/255, green: 232/255, blue: 232/255)
-    let vm = ""
     
     func body(content: Content) -> some View {
         content

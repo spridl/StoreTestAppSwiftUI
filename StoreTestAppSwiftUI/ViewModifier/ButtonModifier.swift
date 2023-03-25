@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ButtonModifier: ViewModifier {
-    let vm = ""
     func body(content: Content) -> some View {
         content
             .frame(height: 46)
